@@ -1,6 +1,6 @@
 <?php
 
-class Ventas extends Conectar{
+class Venta extends Conectar{
     public function get_venta(){
         $conectar= parent::conexion();
 
