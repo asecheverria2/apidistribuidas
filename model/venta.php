@@ -59,7 +59,7 @@ class Venta extends Conectar{
     public function deleteP_venta($id){
         $conectar= parent::conexion();
 
-        $sql="UPDATE ventas 
+        $sql="DELETE FROM ventas 
         WHERE id = ?;";
         $sql=$conectar->prepare($sql);
         

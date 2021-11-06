@@ -28,9 +28,9 @@ switch($_GET["opc"]){
         echo json_encode("Actualizado correctamente");
                     
         break;
-        case "DeleteP":
-            $datos=$objCategoria->deleteP_categoria($body["id"]);
-            echo json_encode("Cambio el estado correctamente");
-                        
-            break;
+    case "DeleteP":
+        $datos=$objCategoria->deleteP_categoria($body["id"]);
+        echo json_encode("Cambio de estado correctamente");
+                    
+        break;
 }
