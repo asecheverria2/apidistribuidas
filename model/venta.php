@@ -20,14 +20,14 @@ class Venta extends Conectar{
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function insert_venta($cantidad,$prodcuto,$precio_unit,$precio_tot){
+    public function insert_venta($cantidad,$producto,$precio_unit,$precio_tot){
         $conectar= parent::conexion();
 
         $sql="INSERT INTO ventas (cantidad, producto, precio_unit, precio_tot) VALUES (?, ?, ?, ?)";
         $sql=$conectar->prepare($sql);
        
         $sql->bindValue(1,$cantidad);
-        $sql->bindValue(2,$prodcuto);
+        $sql->bindValue(2,$producto);
         $sql->bindValue(3,$precio_unit);
         $sql->bindValue(4,$precio_tot);
 
@@ -35,7 +35,7 @@ class Venta extends Conectar{
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function update_venta($id,$cantidad,$prodcuto,$precio_unit,$precio_tot){
+    public function update_venta($id,$cantidad,$producto,$precio_unit,$precio_tot){
         $conectar= parent::conexion();
 
         $sql="UPDATE ventas SET  
@@ -47,7 +47,7 @@ class Venta extends Conectar{
         $sql=$conectar->prepare($sql);
         
         $sql->bindValue(1,$cantidad);
-        $sql->bindValue(2,$prodcuto);
+        $sql->bindValue(2,$producto);
         $sql->bindValue(3,$precio_unit);
         $sql->bindValue(4,$precio_tot);
         $sql->bindValue(5,$id);
